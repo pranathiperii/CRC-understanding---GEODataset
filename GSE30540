@@ -1,0 +1,5 @@
+geo_data <- getGEO("GSE30540")
+pca_result <- prcomp(t(expression_data))
+plot(pca_result$x[,1], pca_result$x[,2],
+xlab = "Principal Component 1", ylab = "Principal Component 2",
+main = "PCA Plot of Dataset 1", pch = 16, col = "blue")
