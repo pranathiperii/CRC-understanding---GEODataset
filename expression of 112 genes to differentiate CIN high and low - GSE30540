@@ -1,0 +1,26 @@
+> down_count <- 69
+> up_count <- 43
+> expression_data <- data.frame(
++     Expression = c("Down", "Up"),
++     Count = c(down_count, up_count)
++ )
+> pie_chart <- ggplot(expression_data, aes(x = "", y = Count, fill = Expression)) +
++     geom_bar(stat = "identity", width = 1) +
++     coord_polar("y", start = 0) +
++     labs(title = "Distribution of Gene Expressions",
++          fill = "Expression") +
++     theme_minimal() +
++     theme(legend.position = "bottom")
+> print(pie_chart)
+> dark_green <- "#006400" 
+> light_green <- "#7CFC00"
+> pie_chart <- ggplot(expression_data, aes(x = "", y = Count, fill = Expression)) +
++     geom_bar(stat = "identity", width = 1) +
++     coord_polar("y", start = 0) +
++     scale_fill_manual(values = c("Down" = dark_green, "Up" = light_green)) + # Specify colors
++     labs(title = "Distribution of Gene Expressions",
++          fill = "Expression") +
++     theme_minimal() +
++     theme(legend.position = "bottom")
+> 
+> print(pie_chart)
